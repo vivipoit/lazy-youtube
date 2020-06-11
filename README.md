@@ -1,24 +1,13 @@
-# README
+# lazy-youtube  
+  
+For years I've used this for lazy loading images:  
+http://jquery.eisbehr.de/lazy/  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It has worked quite well!  
 
-Things you may want to cover:
+Today I decided to get into lazy loading the YouTube iframes and found this:  
+https://github.com/alexpts/jquery.lazy-youtube  
 
-* Ruby version
+Generally speaking, it also works quite well. It was simple and easy to introduce and use right away.  
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+After a while I found myself tweaking this quite a bit, so I decided to share an example of my current setup.
