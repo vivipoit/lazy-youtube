@@ -5,13 +5,10 @@
   align-items: center;
   position: relative;
   cursor: pointer;
-  max-width: 100%;
+  height: 480px;
+}
 
-  img,
-  iframe {
-    max-width: 100%;
-  }
-
+.with-button {
   &:after {
     content: '►';
     font-size: 25px;

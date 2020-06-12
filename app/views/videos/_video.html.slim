@@ -2,5 +2,5 @@
   .row
     .col-12.text-center
       h2 = video.name
-    .col-12.youtube
+    .col-12.youtube.with-button data-youtube-id="#{video.youtube_id}"
       = image_tag video_thumbnail(video)
