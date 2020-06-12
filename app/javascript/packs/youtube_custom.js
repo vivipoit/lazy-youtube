@@ -1,13 +1,20 @@
 $(document).ready(function () {
+  window.playerReady = false;
   $('.youtube').on('click', lazyLoadYoutube);
 });
 
 function lazyLoadYoutube(event) {
   const element = event.currentTarget;
-  var player = new YT.Player(element.children[0], {
+  element.classList.remove('with-button');
+  window.player = new YT.Player(element.children[0], {
     height: '100%',
     width: '100%',
-    videoId: element.dataset['youtubeId']
+    videoId: element.dataset['youtubeId'],
+    events: { 'onReady': playerOnReady }
   });
-  element.classList.remove('with-button');
+}
+
+function playerOnReady(event) {
+  playerReady = true;
+  event.target.playVideo();
 }
