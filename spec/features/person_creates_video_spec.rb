@@ -24,4 +24,14 @@ feature 'person creates video' do
 
     expect(page).to have_content 'Problems creating video.'
   end
+
+  scenario 'with no YouTube ID' do
+    visit root_path
+    click_on 'New Video'
+
+    fill_in 'Name', with: 'Rails 5.2 ActiveStorage Introduction'
+    click_on 'Create Video'
+
+    expect(page).to have_content 'Problems creating video.'
+  end
 end
