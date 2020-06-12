@@ -7,6 +7,6 @@ feature 'person sees title' do
     visit root_path
 
     expect(page).to have_title 'vivipoit/lazy-youtube'
-    expect(page).to have_css 'h1', text: 'lazy-youtube'
+    expect(page).to have_css 'span.h1', text: 'vivipoit/lazy-youtube'
   end
 end
