@@ -3,12 +3,14 @@
 require 'rails_helper'
 
 feature 'person creates video' do
-  scenario 'sucessfully' do
+  before :each do
     visit root_path
     click_on 'New Video'
+  end
 
+  scenario 'sucessfully' do
     fill_in 'Name', with: 'Rails 5.2 ActiveStorage Introduction'
-    fill_in 'YouTube ID', with: 'jtKEP_lsLco&t=284s'
+    fill_in 'YouTube ID', with: 'jtKEP_lsLco'
     click_on 'Create Video'
 
     expect(page).to have_content 'Video created.'
@@ -16,20 +18,22 @@ feature 'person creates video' do
   end
 
   scenario 'with no name' do
-    visit root_path
-    click_on 'New Video'
-
-    fill_in 'YouTube ID', with: 'jtKEP_lsLco&t=284s'
+    fill_in 'YouTube ID', with: 'jtKEP_lsLco'
     click_on 'Create Video'
 
     expect(page).to have_content 'Problems creating video.'
   end
 
   scenario 'with no YouTube ID' do
-    visit root_path
-    click_on 'New Video'
-
     fill_in 'Name', with: 'Rails 5.2 ActiveStorage Introduction'
+    click_on 'Create Video'
+
+    expect(page).to have_content 'Problems creating video.'
+  end
+
+  scenario 'with entire YouTube url' do
+    fill_in 'Name', with: 'Rails 5.2 ActiveStorage Introduction'
+    fill_in 'YouTube ID', with: 'https://www.youtube.com/watch?v=jtKEP_lsLco'
     click_on 'Create Video'
 
     expect(page).to have_content 'Problems creating video.'
