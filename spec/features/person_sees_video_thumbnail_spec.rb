@@ -9,6 +9,8 @@ feature 'person sees video thumbnail' do
     visit root_path
 
     expect(page).to have_css 'h2', text: "Let's Talk About Bathrooms"
-    expect(page).to have_css "img[src='https://img.youtube.com/vi/Jv7d8EXxtqs/sddefault.jpg']"
+    within '.youtube' do
+      expect(page).to have_css "img[src='https://img.youtube.com/vi/Jv7d8EXxtqs/sddefault.jpg']"
+    end
   end
 end

@@ -1,0 +1,30 @@
+.youtube {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  max-width: 100%;
+
+  img,
+  iframe {
+    max-width: 100%;
+  }
+
+  &:after {
+    content: '►';
+    font-size: 25px;
+    color: white;
+    margin: auto;
+    position: absolute;
+    opacity: 0.5;
+    background: black;
+    padding: 20px 40px;
+    border-radius: 10px;
+  }
+  &:hover:after {
+    opacity: 1;
+    background: red;
+  }
+}
